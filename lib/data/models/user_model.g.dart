@@ -1,53 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'student_model.dart';
+part of 'user_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class StudentModelAdapter extends TypeAdapter<StudentModel> {
+class UserModelAdapter extends TypeAdapter<UserModel> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
-  StudentModel read(BinaryReader reader) {
+  UserModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return StudentModel(
+    return UserModel(
       id: fields[0] as String,
-      name: fields[1] as String,
-      age: fields[2] as int,
-      email: fields[3] as String?,
-      phone: fields[4] as String?,
-      imagePath: fields[5] as String?,
-      createdAt: fields[6] as int?,
-      updatedAt: fields[7] as int?,
+      email: fields[1] as String,
+      name: fields[2] as String,
+      createdAt: fields[3] as int?,
+      lastLogin: fields[4] as int?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, StudentModel obj) {
+  void write(BinaryWriter writer, UserModel obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.name)
-      ..writeByte(2)
-      ..write(obj.age)
-      ..writeByte(3)
       ..write(obj.email)
-      ..writeByte(4)
-      ..write(obj.phone)
-      ..writeByte(5)
-      ..write(obj.imagePath)
-      ..writeByte(6)
+      ..writeByte(2)
+      ..write(obj.name)
+      ..writeByte(3)
       ..write(obj.createdAt)
-      ..writeByte(7)
-      ..write(obj.updatedAt);
+      ..writeByte(4)
+      ..write(obj.lastLogin);
   }
 
   @override
@@ -56,7 +47,7 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is StudentModelAdapter &&
+      other is UserModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
